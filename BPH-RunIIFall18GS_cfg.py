@@ -96,7 +96,7 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
             operates_on_particles = cms.vint32(511,521,531,5122),
             use_default_decay = cms.untracked.bool(False),
             particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
-            user_decay_file = cms.vstring('myBBarnoJpsi.dec')
+            user_decay_file = cms.vstring('bbar_MC_production/myBBarnoJpsi.dec')
         ),
         parameterSets = cms.vstring('EvtGen130')
     ),

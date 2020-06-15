@@ -9,7 +9,7 @@ config.General.transferLogs = False
 
 config.JobType.pluginName = 'PrivateMC'
 config.JobType.psetName = 'BPH-RunIIFall18GS_cfg.py'
-config.Data.outputPrimaryDataset = 'bbarTo4mu_13TeV__pythia8'
+config.Data.outputPrimaryDataset = 'bbarTo4mu_13TeV_pythia8'
 config.Data.splitting = 'EventBased'
 config.Data.unitsPerJob = 10000
 NJOBS = 500   # This is not a configuration parameter, but an auxiliary variable that we use in the next line.
