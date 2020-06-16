@@ -23,6 +23,7 @@ def parseOptions():
     parser.add_option('-d', '--datasets', dest='DATASETS', type='string', default='datasets_Zp_sample_GENSIM_2017.txt', help='txt file with datasets to run over')
     parser.add_option('-s', '--substring', dest='SUBSTRING', type='string', default='', help='only submit datasets with this string in the name')
     parser.add_option('-c', '--cfg', dest='CONFIGFILE', type='string', default='', help='CMSSW configuration  file ')
+    parser.add_option('-f', '--filesperjob', dest='FILESPERJOB', type='string', default='1', help='Files per crab job')
     # store options and arguments as global variables
     global opt, args
     (opt, args) = parser.parse_args()
@@ -52,6 +53,7 @@ def submitAnalyzer():
     outDir= tag
     outData= tag2
     CONFILE = opt.CONFIGFILE
+    filesperjob = opt.FILESPERJOB
     if (not os.path.isdir(outDir)):
         cmd = 'mkdir '+outDir
         processCmd(cmd)
@@ -140,6 +142,9 @@ def submitAnalyzer():
         output = processCmd(cmd)
 
         cmd = "sed -i 's~OUTDIR~"+outDir+"~g' "+outDir+'/cfg/'+crabcfgfile
+        output = processCmd(cmd)
+   
+        cmd = "sed -i 's~FPJ~"+filesperjob+"~g' "+outDir+'/cfg/'+crabcfgfile
         print 'Submitting dataset:', dataset
         #cmd = 'crab submit -c '+outDir+'/cfg/'+crabcfgfile
         #print cmd

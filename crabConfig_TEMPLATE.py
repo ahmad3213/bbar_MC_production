@@ -14,7 +14,7 @@ config.JobType.maxMemoryMB = 3000
 config.Data.inputDBS = 'phys03'
 config.Data.inputDataset = 'DATASETNAME'
 config.Data.splitting = 'FileBased'
-config.Data.unitsPerJob = 1
+config.Data.unitsPerJob = FPJ
 config.Data.outputDatasetTag = 'OUTDATANAME'
 
 config.Data.publication = True
