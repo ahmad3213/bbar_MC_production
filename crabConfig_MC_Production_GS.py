@@ -1,5 +1,6 @@
 from CRABClient.UserUtilities import config
-from CRABClient import getUsername
+from CRABClient.UserUtilities import getUsername
+username = getUsername()
 config = config()
 
 config.General.requestName = 'RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1-GENSIM-bbarTo4mu'
@@ -11,13 +12,13 @@ config.JobType.pluginName = 'PrivateMC'
 config.JobType.psetName = 'BPH-RunIIFall18GS_cfg.py'
 config.Data.outputPrimaryDataset = 'bbarTo4mu_13TeV_pythia8'
 config.Data.splitting = 'EventBased'
-config.Data.unitsPerJob = 10000
-NJOBS = 500   # This is not a configuration parameter, but an auxiliary variable that we use in the next line.
+config.Data.unitsPerJob = 100000
+NJOBS = 1000   # This is not a configuration parameter, but an auxiliary variable that we use in the next line.
 config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
 
 
 config.Data.publication = True
-config.Data.outLFNDirBase = '/store/user/%s/Sample_Production/bbarTo4mu/GS/' % (getUsername())
+config.Data.outLFNDirBase = '/store/group/l1upgrades/MC2020/Sample_Production/bbarTo4mu/GS/'
 #config.Data.ignoreLocality = True
 config.Data.allowNonValidInputDataset = True
 
