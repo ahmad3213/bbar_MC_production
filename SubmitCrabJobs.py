@@ -145,6 +145,8 @@ def submitAnalyzer():
         output = processCmd(cmd)
    
         cmd = "sed -i 's~FPJ~"+filesperjob+"~g' "+outDir+'/cfg/'+crabcfgfile
+        output = processCmd(cmd)
+
         print 'Submitting dataset:', dataset
         cmd = 'crab submit -c '+outDir+'/cfg/'+crabcfgfile
         print cmd
