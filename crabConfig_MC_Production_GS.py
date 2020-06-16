@@ -7,10 +7,11 @@ config.General.requestName = 'RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v1
 config.General.workArea = 'bbarTo4mu_GENSIM'
 config.General.transferOutputs = True
 config.General.transferLogs = False
-
+import os
 config.JobType.pluginName = 'PrivateMC'
-config.JobType.psetName = 'BPH-RunIIFall18GS_cfg.py'
+config.JobType.psetName = 'BPH-RunIIFall18GS_cfg_crab.py'
 config.Data.outputPrimaryDataset = 'bbarTo4mu_13TeV_pythia8'
+config.JobType.inputFiles = [os.environ.get('CMSSW_BASE')+'/src/bbar_MC_production/myBBarnoJpsi.dec']
 config.Data.splitting = 'EventBased'
 config.Data.unitsPerJob = 100000
 NJOBS = 1000   # This is not a configuration parameter, but an auxiliary variable that we use in the next line.
